@@ -1,1 +1,15 @@
 1664854074417:;set _root_.scala.collection.Seq(historyPath := None,shellPrompt := { _ => "" },SettingKey[_root_.scala.Option[_root_.sbt.File]]("sbtStructureOutputFile") in _root_.sbt.Global := _root_.scala.Some(_root_.sbt.file("C:/Users/vader/AppData/Local/Temp/sbt-structure.xml")),SettingKey[_root_.java.lang.String]("sbtStructureOptions") in _root_.sbt.Global := "download, resolveClassifiers");apply -cp "C:/Users/vader/AppData/Roaming/JetBrains/IntelliJIdea2022.2/plugins/Scala/repo/org/jetbrains/scala/sbt-structure-extractor_2.12_1.0/2021.3.0/sbt-structure-extractor-2021.3.0.jar" org.jetbrains.sbt.CreateTasks;preferScala2;*/*:dumpStructure
+1664944107652:clean
+1664944110700:compile
+1664944212855:run
+1664944225364:run C:/Users/vader/IdeaProjects/CS441_Fall2022/MRWordCount/src/main/resources/input/data.txt C:
+1664944226959:/Users/vader/IdeaProjects/CS441_Fall2022/MRWordCount/src/main/resources/output
+1664944266361:run C:/Users/vader/IdeaProjects/CS441_Fall2022/MRWordCount/src/main/resources/input/data.txt C:
+1664944267275:/Users/vader/IdeaProjects/CS441_Fall2022/MRWordCount/src/main/resources/output
+1664944420634:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/data.txt C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1664944669094:clean
+1664944675599:compile
+1664944686303:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/data.txt C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1664944904781:q
+1664944907155:quit
+1664944908003:exit
