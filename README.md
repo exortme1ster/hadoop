@@ -1,4 +1,4 @@
-# Homework 2 - Nikita Mashchenko
+# Homework 1 - Nikita Mashchenko
 The goal of this homework is for students to gain experience with solving a distributed computational problem using cloud computing technologies. I designed and implemented an instance of the map/reduce computational model
 
 AWS deployment video - [video link]
