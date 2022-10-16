@@ -10,9 +10,14 @@ import java.util
 import com.typesafe.config.{Config, ConfigFactory}
 
 object Task1:
+  /*
+    First map/reduce is used to generate distributions of various type of log messages in a specific time interval
+  */
+
   class Map extends MapReduceBase with Mapper[LongWritable, Text, Text, IntWritable] :
     private final val one = new IntWritable(1)
     private val word = new Text()
+    // load the config
     val config: Config = ConfigFactory.load("application.conf").getConfig("randomLogGenerator")
 
     @throws[IOException]
@@ -26,6 +31,7 @@ object Task1:
         // combine to get token
         val token = time + ", " + logType
         word.set(token)
+        // [21:00, ERROR], [1]
         output.collect(word, one)
       }
 
@@ -33,6 +39,7 @@ object Task1:
     override def reduce(key: Text, values: util.Iterator[IntWritable], output: OutputCollector[Text, IntWritable], reporter: Reporter): Unit =
       // group up and sum values
       val sum = values.asScala.reduce((valueOne, valueTwo) => new IntWritable(valueOne.get() + valueTwo.get()))
+      // reduce
       output.collect(key, new IntWritable(sum.get()))
 
   @main def RunTask1(inputPath: String, outputPath: String) =
