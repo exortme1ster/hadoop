@@ -1,7 +1,7 @@
 # Homework 2 - Nikita Mashchenko
 The goal of this homework is to use Hadoop map/reduce framework in scala to generate distributions of type log messages according to given regex pattern and time interval.
 
-AWS deployment video - [video link](https://www.youtube.com/watch?v=A3g_ttNZq98)
+AWS deployment video - [video link]
 ## Prerequisites
 Since we are using Hadoop, require Hadoop 3.0.1 installed on Windows 10. <br>
 SBT installed and configured in Intellij. <br>
