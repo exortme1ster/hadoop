@@ -10,6 +10,9 @@ import java.util
 import com.typesafe.config.{Config, ConfigFactory}
 
 object Task4:
+  /*
+    Fourth map/reduce is to finding the length of the longest string in each message type which matches the given regex pattern.
+  */
   class Map extends MapReduceBase with Mapper[LongWritable, Text, Text, IntWritable] :
     private val word = new Text()
     // get the config

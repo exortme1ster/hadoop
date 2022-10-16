@@ -10,6 +10,10 @@ import java.util
 import com.typesafe.config.{Config, ConfigFactory}
 
 object Task2:
+  /*
+    Second map/reduce is to generate the number of ERROR messages in each time interval and to sort the time intervals in ascending order of the number of messages.
+  */
+
   // first job, get all instances of ERROR for specific pattern
   class Map extends MapReduceBase with Mapper[LongWritable, Text, Text, IntWritable] :
     private final val one = new IntWritable(1)
@@ -21,14 +25,18 @@ object Task2:
       val line: String = value.toString
       // check if pattern exist in line
       if (config.getString("Pattern").r.findAllIn(line).nonEmpty == true && line.split(" ")(2) == "ERROR") {
+        // get the time
         val time = line.split(" ")(0).substring(0, 5)
+        // get the logType
         val logType = line.split(" ")(2)
+        // get the token
         val token = time + ", " + logType
+        // set key - value pair
         word.set(token)
         output.collect(word, one)
       }
 
-  // first job, get all instances of ERROR for specific pattern
+  // second job, sort the results from first job
   class Reduce extends MapReduceBase with Reducer[Text, IntWritable, Text, IntWritable] :
     override def reduce(key: Text, values: util.Iterator[IntWritable], output: OutputCollector[Text, IntWritable], reporter: Reporter): Unit =
       val sum = values.asScala.reduce((valueOne, valueTwo) => new IntWritable(valueOne.get() + valueTwo.get()))
@@ -80,9 +88,9 @@ object Task2:
     FileOutputFormat.setOutputPath(conf, new Path(outputPath))
     JobClient.runJob(conf)
 
-    Thread.sleep(5000) // wait for 5000 millisecond between tasks
+    Thread.sleep(5000) // wait for 5000 millisecond between tasks (to avoid delayed folder creation problem)
 
-    // second
+    // second setup
     val conf1: JobConf = new JobConf(this.getClass)
     conf1.setJobName("WordCount1")
     conf1.set("fs.defaultFS", "local")

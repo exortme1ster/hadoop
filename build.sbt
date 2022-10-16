@@ -4,6 +4,11 @@ version := "0.1"
 
 scalaVersion := "3.0.2"
 
+assembly / assemblyMergeStrategy:= {
+  case PathList("META-INF", _*) => MergeStrategy.discard
+  case _ => MergeStrategy.first
+}
+
 val logbackVersion = "1.3.0-alpha10"
 val sfl4sVersion = "2.0.0-alpha5"
 val typesafeConfigVersion = "1.4.1"

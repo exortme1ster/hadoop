@@ -10,10 +10,12 @@ import java.util
 import com.typesafe.config.{Config, ConfigFactory}
 
 object Task3:
+  /*
+    Third map/reduce is to calculate the number of each message type
+  */
   class Map extends MapReduceBase with Mapper[LongWritable, Text, Text, IntWritable] :
     private final val one = new IntWritable(1)
     private val word = new Text()
-    val config: Config = ConfigFactory.load("application.conf").getConfig("randomLogGenerator")
 
     @throws[IOException]
     def map(key: LongWritable, value: Text, output: OutputCollector[Text, IntWritable], reporter: Reporter): Unit =
