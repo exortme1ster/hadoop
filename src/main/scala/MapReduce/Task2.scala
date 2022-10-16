@@ -9,7 +9,7 @@ import java.io.IOException
 import java.util
 import com.typesafe.config.{Config, ConfigFactory}
 
-object MapReduceProgram:
+object Task2:
   class Map extends MapReduceBase with Mapper[LongWritable, Text, Text, IntWritable] :
     private final val one = new IntWritable(1)
     private val word = new Text()
@@ -18,7 +18,7 @@ object MapReduceProgram:
     @throws[IOException]
     def map(key: LongWritable, value: Text, output: OutputCollector[Text, IntWritable], reporter: Reporter): Unit =
       val line: String = value.toString
-      if (config.getString("Pattern").r.findAllIn(line).nonEmpty == true) {
+      if (config.getString("Pattern").r.findAllIn(line).nonEmpty == true && line.split(" ")(2) == "ERROR") {
         val time = line.split(" ")(0).substring(0, 5)
         val logType = line.split(" ")(2)
         val token = time + ", " + logType
@@ -31,7 +31,7 @@ object MapReduceProgram:
       val sum = values.asScala.reduce((valueOne, valueTwo) => new IntWritable(valueOne.get() + valueTwo.get()))
       output.collect(key, new IntWritable(sum.get()))
 
-  @main def runMapReduce(inputPath: String, outputPath: String) =
+  @main def RunTask2(inputPath: String, outputPath: String) =
     val conf: JobConf = new JobConf(this.getClass)
     conf.setJobName("WordCount")
     conf.set("fs.defaultFS", "local")
