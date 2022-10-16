@@ -1,15 +1,62 @@
-1664854074417:;set _root_.scala.collection.Seq(historyPath := None,shellPrompt := { _ => "" },SettingKey[_root_.scala.Option[_root_.sbt.File]]("sbtStructureOutputFile") in _root_.sbt.Global := _root_.scala.Some(_root_.sbt.file("C:/Users/vader/AppData/Local/Temp/sbt-structure.xml")),SettingKey[_root_.java.lang.String]("sbtStructureOptions") in _root_.sbt.Global := "download, resolveClassifiers");apply -cp "C:/Users/vader/AppData/Roaming/JetBrains/IntelliJIdea2022.2/plugins/Scala/repo/org/jetbrains/scala/sbt-structure-extractor_2.12_1.0/2021.3.0/sbt-structure-extractor-2021.3.0.jar" org.jetbrains.sbt.CreateTasks;preferScala2;*/*:dumpStructure
-1664944107652:clean
-1664944110700:compile
-1664944212855:run
-1664944225364:run C:/Users/vader/IdeaProjects/CS441_Fall2022/MRWordCount/src/main/resources/input/data.txt C:
-1664944226959:/Users/vader/IdeaProjects/CS441_Fall2022/MRWordCount/src/main/resources/output
-1664944266361:run C:/Users/vader/IdeaProjects/CS441_Fall2022/MRWordCount/src/main/resources/input/data.txt C:
-1664944267275:/Users/vader/IdeaProjects/CS441_Fall2022/MRWordCount/src/main/resources/output
-1664944420634:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/data.txt C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
-1664944669094:clean
-1664944675599:compile
-1664944686303:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/data.txt C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
-1664944904781:q
-1664944907155:quit
-1664944908003:exit
+1665521155534:;set _root_.scala.collection.Seq(historyPath := None,shellPrompt := { _ => "" },SettingKey[_root_.scala.Option[_root_.sbt.File]]("sbtStructureOutputFile") in _root_.sbt.Global := _root_.scala.Some(_root_.sbt.file("C:/Users/vader/AppData/Local/Temp/sbt-structure.xml")),SettingKey[_root_.java.lang.String]("sbtStructureOptions") in _root_.sbt.Global := "download, resolveClassifiers");apply -cp "C:/Users/vader/AppData/Roaming/JetBrains/IntelliJIdea2022.2/plugins/Scala/repo/org/jetbrains/scala/sbt-structure-extractor_2.12_1.0/2021.3.0/sbt-structure-extractor-2021.3.0.jar" org.jetbrains.sbt.CreateTasks;preferScala2;*/*:dumpStructure
+1665521250473:clean
+1665521254431:compile
+1665521707525:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/log/LogFileGenerator.2022-10-11.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665782511955:;set _root_.scala.collection.Seq(historyPath := None,shellPrompt := { _ => "" },SettingKey[_root_.scala.Option[_root_.sbt.File]]("sbtStructureOutputFile") in _root_.sbt.Global := _root_.scala.Some(_root_.sbt.file("C:/Users/vader/AppData/Local/Temp/sbt-structure.xml")),SettingKey[_root_.java.lang.String]("sbtStructureOptions") in _root_.sbt.Global := "download, resolveClassifiers");apply -cp "C:/Users/vader/AppData/Roaming/JetBrains/IntelliJIdea2022.2/plugins/Scala/repo/org/jetbrains/scala/sbt-structure-extractor_2.12_1.0/2021.3.0/sbt-structure-extractor-2021.3.0.jar" org.jetbrains.sbt.CreateTasks;preferScala2;*/*:dumpStructure
+1665802094884:clean
+1665802097409:compile
+1665802117093:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/log/LogFileGenerator.2022-10-11.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665859980526:clean
+1665859984968:compile
+1665860027358:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665878248620:clean
+1665878251147:compile
+1665878261352:run
+1665879091676:clean
+1665879094517:compile
+1665879150391:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665889068256:compile
+1665889081498:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665889174104:compile
+1665889177320:clean
+1665889179342:compile
+1665889188496:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665889444350:clean
+1665889452830:compile
+1665889457249:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665889473451:clean
+1665889478517:compile
+1665889484669:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665889506470:compile
+1665889517060:clean
+1665889518863:compile
+1665889527236:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665889635331:clean
+1665889637065:compile
+1665889647471:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665890452316:clean
+1665890455530:compile
+1665890468210:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665892304775:clean
+1665892319132:compile
+1665892330000:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665896198477:clean
+1665896201436:compile
+1665896223625:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665896243726:clear
+1665896264907:clean
+1665896267148:compile
+1665896278519:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665896547445:clean
+1665896549662:compile
+1665896600595:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665897283864:compile
+1665897290194:clean
+1665897292034:compile
+1665897303182:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665897389379:clean
+1665897391376:compile
+1665897405092:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
+1665898282105:clean
+1665898284463:compile
+1665898295995:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/logfile2.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output
