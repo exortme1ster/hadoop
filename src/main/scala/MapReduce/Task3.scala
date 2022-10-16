@@ -18,12 +18,14 @@ object Task3:
     @throws[IOException]
     def map(key: LongWritable, value: Text, output: OutputCollector[Text, IntWritable], reporter: Reporter): Unit =
       val line: String = value.toString
+      // just simply get the logtype and send it to reduce
       val logType = line.split(" ")(2)
       word.set(logType)
       output.collect(word, one)
 
   class Reduce extends MapReduceBase with Reducer[Text, IntWritable, Text, IntWritable] :
     override def reduce(key: Text, values: util.Iterator[IntWritable], output: OutputCollector[Text, IntWritable], reporter: Reporter): Unit =
+      // calculate all occurrences
       val sum = values.asScala.reduce((valueOne, valueTwo) => new IntWritable(valueOne.get() + valueTwo.get()))
       output.collect(key, new IntWritable(sum.get()))
 

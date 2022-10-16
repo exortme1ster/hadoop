@@ -93,3 +93,9 @@
 1665902286063:clean
 1665902287623:compile
 1665902308736:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/moreerrors.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output/task3
+1665945565009:clean
+1665945568624:compile
+1665945633959:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/moreerrors.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output/task4
+1665946331043:clean
+1665946333110:compile
+1665946344663:run C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/input/moreerrors.log C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output/task4

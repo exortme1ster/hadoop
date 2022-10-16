@@ -9,33 +9,44 @@ import java.io.IOException
 import java.util
 import com.typesafe.config.{Config, ConfigFactory}
 
-object Task1:
+object Task4:
   class Map extends MapReduceBase with Mapper[LongWritable, Text, Text, IntWritable] :
-    private final val one = new IntWritable(1)
     private val word = new Text()
+    // get the config
     val config: Config = ConfigFactory.load("application.conf").getConfig("randomLogGenerator")
 
     @throws[IOException]
     def map(key: LongWritable, value: Text, output: OutputCollector[Text, IntWritable], reporter: Reporter): Unit =
       val line: String = value.toString
+      // check if pattern exists in line
       if (config.getString("Pattern").r.findAllIn(line).nonEmpty == true) {
-        // get the time
-        val time = line.split(" ")(0).substring(0, 5)
-        // get the logtype
+        // get the log type
         val logType = line.split(" ")(2)
-        // combine to get token
-        val token = time + ", " + logType
-        word.set(token)
-        output.collect(word, one)
+        // get the regex pattern value
+        val regexPattern = config.getString("Pattern").r.findFirstIn(value.toString)
+        word.set(logType)
+        // check the log type and get length of substring
+        if(logType == "INFO") {
+          output.collect(word, new IntWritable(regexPattern.get.length))
+        }
+        else if (logType == "WARN") {
+          output.collect(word, new IntWritable(regexPattern.get.length))
+        }
+        else if (logType == "ERROR") {
+          output.collect(word, new IntWritable(regexPattern.get.length))
+        }
+        else if (logType == "DEBUG") {
+          output.collect(word, new IntWritable(regexPattern.get.length))
+        }
       }
 
   class Reduce extends MapReduceBase with Reducer[Text, IntWritable, Text, IntWritable] :
     override def reduce(key: Text, values: util.Iterator[IntWritable], output: OutputCollector[Text, IntWritable], reporter: Reporter): Unit =
-      // group up and sum values
-      val sum = values.asScala.reduce((valueOne, valueTwo) => new IntWritable(valueOne.get() + valueTwo.get()))
-      output.collect(key, new IntWritable(sum.get()))
+      // The foldLeft method takes an associative binary operator function as parameter and will use it to collapse elements from the collection
+      val max = values.asScala.foldLeft(0) { (t, i) => t max i.get }
+      output.collect(key, new IntWritable(max))
 
-  @main def RunTask1(inputPath: String, outputPath: String) =
+  @main def RunTask4(inputPath: String, outputPath: String) =
     val conf: JobConf = new JobConf(this.getClass)
     conf.setJobName("WordCount")
     conf.set("fs.defaultFS", "local")

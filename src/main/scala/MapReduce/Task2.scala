@@ -18,6 +18,7 @@ object Task2:
     @throws[IOException]
     def map(key: LongWritable, value: Text, output: OutputCollector[Text, IntWritable], reporter: Reporter): Unit =
       val line: String = value.toString
+      // check if pattern exist in line
       if (config.getString("Pattern").r.findAllIn(line).nonEmpty == true && line.split(" ")(2) == "ERROR") {
         val time = line.split(" ")(0).substring(0, 5)
         val logType = line.split(" ")(2)
