@@ -8,7 +8,7 @@ SBT installed and configured in Intellij. <br>
 Scala 3.0.1. <br>
 
 ## Instructions to run locally in hadoop
-clone the repo - ```https://github.com/Ashwin1234/CS441LogFileGenerator.git``` <br>
+clone the repo -  <br>
 First step is to generate the jar file in Intellij.
 run the command - ```sbt clean compile assembly``` this will generate the jar file. Then copy this jar file into a folder which has access. <br>
 Run the hadoop clusters by running ```Start-all.cmd``` with cmd in admin mode in sbin folder. <br>
