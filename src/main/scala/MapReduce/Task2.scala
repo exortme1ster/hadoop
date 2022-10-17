@@ -71,6 +71,7 @@ object Task2:
 
 
   @main def RunTask2(inputPath: String, outputPath: String) =
+    val config: Config = ConfigFactory.load("application.conf").getConfig("map2")
     // first setup
     logger.info("Job 2 part1 started!");
     val conf: JobConf = new JobConf(this.getClass)
@@ -109,8 +110,8 @@ object Task2:
     conf1.setJarByClass(classOf[Map])
     conf1.setInputFormat(classOf[TextInputFormat])
     conf1.setOutputFormat(classOf[TextOutputFormat[IntWritable, Text]])
-    FileInputFormat.setInputPaths(conf1, new Path("C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output/task2predata/part-00000"))
-    FileOutputFormat.setOutputPath(conf1, new Path("C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output/task2"))
+    FileInputFormat.setInputPaths(conf1, new Path(config.getString("input")))
+    FileOutputFormat.setOutputPath(conf1, new Path(config.getString("output")))
     JobClient.runJob(conf1)
 
     logger.info("Job 2 finished!");

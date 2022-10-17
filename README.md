@@ -1,7 +1,7 @@
 # Homework 1 - Nikita Mashchenko
 The goal of this homework is for students to gain experience with solving a distributed computational problem using cloud computing technologies. I designed and implemented an instance of the map/reduce computational model
 
-AWS deployment video - [video link]
+AWS deployment video - [video link](https://www.youtube.com/watch?v=EWcnEi2nVPc)
 ## Prerequisites
 🚀 Since we are using Hadoop, require Hadoop 3.2.4 installed on Windows 10. <br>
 🚀 IntelliJ <br>

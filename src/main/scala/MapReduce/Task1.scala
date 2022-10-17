@@ -43,7 +43,7 @@ object Task1:
       // reduce
       output.collect(key, new IntWritable(sum.get()))
 
-  @main def main(inputPath: String, outputPath: String) =
+  @main def RunTask1(inputPath: String, outputPath: String) =
     logger.info("Job 1 started!");
     val conf: JobConf = new JobConf(this.getClass)
     conf.setJobName("WordCount")
