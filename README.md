@@ -16,13 +16,13 @@ AWS deployment video - [video link]
 ✨ Run the hadoop clusters by running ```Start-all.cmd``` with cmd in admin mode in sbin folder. <br>
 ✨ Create an input folder by executing command - ```hadoop fs -mkdir /input_dir``` <br>
 ✨ Copy the input log files (input_file.txt) into this folder - ```hadoop fs -put C:/input_file.txt /input_dir``` <br>
-✨ Run the command - ```hadoop jar C:/LogFileGenerator-assembly-0.1.jar MapReduce.<Task Number> /input_dir /output_dir``` this will start the hadoop map/reduce job. <br>
+✨ Run the command - ```hadoop jar C:/MRCounter-assembly-0.1.jar MapReduce.<Task Number> /input_dir /output_dir``` this will start the hadoop map/reduce job. <br>
 ✨ Finally to view the output run the command - ```hadoop dfs -cat /output_dir/* ``` <br>
 
 ## Tasks
 ### Task1
 Task1 is to generate the distributions of various type of log messages in a specific time interval.
-To run ```hadoop jar C:/LogFileGenerator-assembly-0.1.jar MapReduce.Task1 /input_dir /output_dir``` <br>
+To run ```hadoop jar C:/MRCounter-assembly-0.1.jar MapReduce.Task1 /input_dir /output_dir``` <br>
 Output -
 ```
 12:53, INFO, 1
@@ -92,7 +92,7 @@ As we can notice file in the csv format and distributions of various type of log
 
 ### Task2
 Task2 is to generate the number of ERROR messages in each time interval that match the regex pattern and to sort the time intervals in ascending order of the number of messages.
-To run ```hadoop jar C:/LogFileGenerator-assembly-0.1.jar MapReduce.Task2 /input_dir /output_dir``` <br>
+To run ```hadoop jar C:/MRCounter-assembly-0.1.jar MapReduce.Task2 /input_dir /output_dir``` <br>
 
 In this task we run two maps, first will get the desired result and second will sort it in descending order, let's see the results of first map:
 
@@ -117,7 +117,7 @@ In this example I have used the input file called moreerrors.log to generate mor
 ### Task3
 Task3 is to calculate ALL types of errors across the file
 
-To run ```hadoop jar C:/LogFileGenerator-assembly-0.1.jar MapReduce.Task3 /input_dir /output_dir``` <br>
+To run ```hadoop jar C:/MRCounter-assembly-0.1.jar MapReduce.Task3 /input_dir /output_dir``` <br>
 
 Output
 ```
@@ -131,7 +131,7 @@ We can see that after running it we can the desired output.
 ### Task4
 Task4 is basically finding the length of the longest string in each message type which matches the given regex pattern.<br>
 
-To run ```hadoop jar C:/LogFileGenerator-assembly-0.1.jar MapReduce.Task4 /input_dir /output_dir``` <br>
+To run ```hadoop jar C:/MRCounter-assembly-0.1.jar MapReduce.Task4 /input_dir /output_dir``` <br>
 
 Output
 
