@@ -1,5 +1,6 @@
 package MapReduce
 
+import Generation.LogMsgSimulator.logger
 import org.apache.hadoop.fs.Path
 import org.apache.hadoop.io.{IntWritable, LongWritable, Text}
 import org.apache.hadoop.mapred.*
@@ -71,6 +72,7 @@ object Task2:
 
   @main def RunTask2(inputPath: String, outputPath: String) =
     // first setup
+    logger.info("Job 2 part1 started!");
     val conf: JobConf = new JobConf(this.getClass)
     conf.setJobName("WordCount")
     conf.set("fs.defaultFS", "local")
@@ -81,6 +83,7 @@ object Task2:
     conf.setOutputValueClass(classOf[IntWritable])
     conf.setMapperClass(classOf[Map])
     conf.setCombinerClass(classOf[Reduce])
+    conf.setJarByClass(classOf[Map])
     conf.setReducerClass(classOf[Reduce])
     conf.setInputFormat(classOf[TextInputFormat])
     conf.setOutputFormat(classOf[TextOutputFormat[Text, IntWritable]])
@@ -91,6 +94,7 @@ object Task2:
     Thread.sleep(5000) // wait for 5000 millisecond between tasks (to avoid delayed folder creation problem)
 
     // second setup
+    logger.info("Job 2 part2 started!");
     val conf1: JobConf = new JobConf(this.getClass)
     conf1.setJobName("WordCount1")
     conf1.set("fs.defaultFS", "local")
@@ -102,8 +106,11 @@ object Task2:
     conf1.setMapperClass(classOf[Map2])
     conf1.setCombinerClass(classOf[Reduce2])
     conf1.setReducerClass(classOf[Reduce2])
+    conf1.setJarByClass(classOf[Map])
     conf1.setInputFormat(classOf[TextInputFormat])
     conf1.setOutputFormat(classOf[TextOutputFormat[IntWritable, Text]])
     FileInputFormat.setInputPaths(conf1, new Path("C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output/task2predata/part-00000"))
     FileOutputFormat.setOutputPath(conf1, new Path("C:/Users/vader/IdeaProjects/MapReduceHW1-CS441/src/main/resources/output/task2"))
     JobClient.runJob(conf1)
+
+    logger.info("Job 2 finished!");

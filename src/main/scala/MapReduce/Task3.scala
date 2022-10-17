@@ -1,5 +1,6 @@
 package MapReduce
 
+import Generation.LogMsgSimulator.logger
 import org.apache.hadoop.fs.Path
 import org.apache.hadoop.io.{IntWritable, LongWritable, Text}
 import org.apache.hadoop.mapred.*
@@ -32,6 +33,7 @@ object Task3:
       output.collect(key, new IntWritable(sum.get()))
 
   @main def RunTask3(inputPath: String, outputPath: String) =
+    logger.info("Job 3 started!");
     val conf: JobConf = new JobConf(this.getClass)
     conf.setJobName("WordCount")
     conf.set("fs.defaultFS", "local")
@@ -42,9 +44,11 @@ object Task3:
     conf.setOutputValueClass(classOf[IntWritable])
     conf.setMapperClass(classOf[Map])
     conf.setCombinerClass(classOf[Reduce])
+    conf.setJarByClass(classOf[Map])
     conf.setReducerClass(classOf[Reduce])
     conf.setInputFormat(classOf[TextInputFormat])
     conf.setOutputFormat(classOf[TextOutputFormat[Text, IntWritable]])
     FileInputFormat.setInputPaths(conf, new Path(inputPath))
     FileOutputFormat.setOutputPath(conf, new Path(outputPath))
     JobClient.runJob(conf)
+    logger.info("Job 3 finished!");
